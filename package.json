@@ -4,7 +4,7 @@
     "displayName": "Uchievements",
     "description": "Add more fun for your game developing. Receive achievements when you work in Unity.",
     "unity": "2020.3",
-    "version": "1",
+    "version": "1.0.0",
     "keywords": [
         "Achievements",
         "Editor only",
