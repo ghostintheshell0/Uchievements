@@ -22,10 +22,8 @@ namespace Uchievements
         private static bool IsInited;
         private static bool IsPackage;
 
-        private static string Assets = "Assets";
-        private static string Packages = "Packages";
-
-        private static string ProjectName = "Uchievements";
+        private static string Assets = "Assets/Uchievements";
+        private static string Packages = "Packages/com.ghostintheshell0.uchievements";
 
         public static Texture2D GetIcon(int level)
         {
@@ -71,7 +69,7 @@ namespace Uchievements
             if(!IsInited)
             {
                 IsInited = true;
-                var path = Path.Combine(Packages, ProjectName);
+                var path = Path.Combine(Packages);
                 IsPackage = Directory.Exists(path);
             }
         }
@@ -79,7 +77,7 @@ namespace Uchievements
         private static string GetPath(string name)
         {
             var start = IsPackage ? Packages : Assets;
-            var path = Path.Combine(start, ProjectName, name);
+            var path = Path.Combine(start, name);
             return path;
         }
     }
