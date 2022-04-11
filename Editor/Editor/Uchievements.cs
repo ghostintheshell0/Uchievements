@@ -12,6 +12,7 @@ namespace Uchievements
     [InitializeOnLoad]
     public class Uchievements
     {
+        public static Color TextColor = new Color(0.975f, 0.7843f, 0.38f);
         private readonly static long alertShowColdownSeconds = 3;
         public static UchievementsManager Manager;
         private static bool Inited;
@@ -88,7 +89,6 @@ namespace Uchievements
                 {
                     AudioUtils.PlayClip(UchievementsResourcesLoader.GetAudio());
                 }
-                
             }
         }
 
@@ -185,7 +185,7 @@ namespace Uchievements
                 {
                     AudioUtils.PlayClip(UchievementsResourcesLoader.GetAudio());
                 }
-                Debug.Log($"<Color=#{ColorUtility.ToHtmlStringRGB(UchievementStyle.TextColor)}>{u.Name} (Level {UchievementUtils.GetLevel(u)})</Color>");
+                Debug.Log($"<Color=#{ColorUtility.ToHtmlStringRGB(TextColor)}>{u.Name} (Level {u.GetLevel()})</Color>");
             }
             else
             {

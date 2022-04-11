@@ -4,13 +4,15 @@
     "displayName": "Uchievements",
     "description": "Add more fun for your game developing. Receive achievements when you work in Unity.",
     "unity": "2020.3",
-    "version": "1.1.0",
+    "version": "1",
     "keywords": [
         "Achievements",
         "Editor only",
         "Game in editor"
     ],
-    "dependencies": {},
+    "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/ghostintheshell0/Uchievements.git"

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:uie="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
+
+   <!-- <ScrollView show-vertical-scroller="true" height="999px"> -->
+        <VisualElement name="uchievement">
+            <VisualElement name="icon">
+                <Image name="image" />
+            </VisualElement>
+            <Box name="right">
+                <Label name="label" text="Keep kalm and save scene"/>
+                <uie:ProgressBar name="progress"/>
+            </Box>
+        </VisualElement>
+   <!-- </ScrollView> -->
+</UXML>

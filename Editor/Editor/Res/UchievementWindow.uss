@@ -1,0 +1,39 @@
+#uchievement
+{
+    flex-direction: row;
+    height: 100px;
+    min-height: 100px;
+    flex-grow: 1;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#uchievement #right
+{
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 3px;
+}
+
+#uchievement #icon
+{
+    min-height: 100px;
+    min-width: 100px;
+    height: 100px;
+    width: 100px;
+    margin: 3px;
+}
+
+#uchievement Label
+{
+    -unity-text-align: middle-center;
+    color: #F9C861;
+    height: 40px;
+    font-size: 20px;
+}
+
+#uchievement #progress
+{
+    height: 40px;
+}

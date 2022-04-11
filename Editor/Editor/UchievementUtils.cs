@@ -13,14 +13,14 @@ namespace Uchievements
             {UchievementDifficult.Hard, new Reward(100, 500, 1000)}, 
         };
 
-        public static Texture2D GetIconForUchievement(UchievementData u)
+        public static Texture2D GetIconForUchievement(this UchievementData u)
         {
             var level = GetLevel(u);
             return UchievementsResourcesLoader.GetIcon(level);
         }
 
 
-        public static int GetLevel(UchievementData data)
+        public static int GetLevel(this UchievementData data)
         {
             var reward = rewards[data.Difficult];
 
@@ -36,7 +36,7 @@ namespace Uchievements
             return reward.Values.Length;
         }
 
-        public static float GetPointsForReward(UchievementData u)
+        public static float GetPointsForReward(this UchievementData u)
         {
             if(IsMaxLevel(u))
             {
@@ -47,7 +47,7 @@ namespace Uchievements
             return rewards[u.Difficult].Values[level];
         }
 
-        public static bool IsMaxLevel(UchievementData u)
+        public static bool IsMaxLevel(this UchievementData u)
         {
             var level = GetLevel(u);
 
@@ -67,7 +67,7 @@ namespace Uchievements
             return false;
         }
 
-        public static string GetLabelForProgressbar(UchievementData u)
+        public static string GetLabelForProgressbar(this UchievementData u)
         {
             if(IsMaxLevel(u))
             {
