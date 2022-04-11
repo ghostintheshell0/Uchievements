@@ -7,12 +7,6 @@ namespace Uchievements
 {
     public class UchievementsWindow : EditorWindow
     {
-        private static string uxmlPath = "Assets/Uchievements/Editor/Res/UchievementWindow.uxml";
-        private static string ussPath = "Assets/Uchievements/Editor/Res/UchievementWindow.uss";
-
-        private static VisualTreeAsset visualTree;
-        private static StyleSheet styleSheet;
-
         private List<UchievementView> views;
 
         [MenuItem("Window/Uchievements")]
@@ -52,12 +46,11 @@ namespace Uchievements
             ScrollView scroll = new ScrollView();
             scroll.showVertical = true;
             root.Add(scroll);
-            root.styleSheets.Add(StyleSheet);
+            root.styleSheets.Add(UchievementsResourcesLoader.StyleSheet);
 
             for(var i = 0; i < count; i++)
             {
-                VisualElement uxml = VisualTree.CloneTree();
-                uxml.styleSheets.Add(StyleSheet);
+                VisualElement uxml = UchievementsResourcesLoader.VisualTree.CloneTree();
                 scroll.Add(uxml);
 
                 var view = new UchievementView(uxml);
@@ -70,31 +63,5 @@ namespace Uchievements
             return Uchievements.Manager.All;
         }
 
-        public static VisualTreeAsset VisualTree
-        {
-            get
-            {
-                if(visualTree == default)
-                {
-                    visualTree  = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
-                }
-                
-                return visualTree;
-            }
-        }
-
-
-        public static StyleSheet StyleSheet
-        {
-            get
-            {
-                if(styleSheet == default)
-                {
-                    styleSheet  = AssetDatabase.LoadAssetAtPath<StyleSheet>(ussPath);
-                }
-                
-                return styleSheet;
-            }
-        }
     }
 }

@@ -44,8 +44,8 @@ namespace Uchievements
                 {
                     var root = rootVisualElement;
 
-                    var tree = UchievementsWindow.VisualTree.CloneTree();
-                    tree.styleSheets.Add(UchievementsWindow.StyleSheet);
+                    var tree = UchievementsResourcesLoader.VisualTree.CloneTree();
+                    tree.styleSheets.Add(UchievementsResourcesLoader.StyleSheet);
 
                     view = new UchievementView(tree);
                     

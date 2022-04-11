@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UIElements;
 
 namespace Uchievements
 {
@@ -16,14 +17,23 @@ namespace Uchievements
 
         private static AudioClip clip;
         private static string clipPath = "Editor/Res/unlock.mp3";
+
+        private static string uxmlPath = "Editor/Res/UchievementWindow.uxml";
+        private static string ussPath = "Editor/Res/UchievementWindow.uss";
+        private static VisualTreeAsset visualTree;
+        private static StyleSheet styleSheet;
+        
         private static string ManagerPath = "Assets/UchievementsData";
         private static string ManagerName = "Assets/UchievementsData/UchievementsData.asset";
+
+        
 
         private static bool IsInited;
         private static bool IsPackage;
 
         private static string Assets = "Assets/Uchievements";
         private static string Packages = "Packages/com.ghostintheshell0.uchievements";
+
 
         public static Texture2D GetIcon(int level)
         {
@@ -62,6 +72,35 @@ namespace Uchievements
             }
 
             return manager;
+        }
+        
+        public static VisualTreeAsset VisualTree
+        {
+            get
+            {
+                if(visualTree == default)
+                {
+                    var path = GetPath(uxmlPath);
+                    visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
+                }
+                
+                return visualTree;
+            }
+        }
+
+
+        public static StyleSheet StyleSheet
+        {
+            get
+            {
+                if(styleSheet == default)
+                {
+                    var path = GetPath(ussPath);
+                    styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
+                }
+                
+                return styleSheet;
+            }
         }
 
         private static void Init()
