@@ -27,7 +27,7 @@ namespace Uchievements
             
             if(uchievements == default || uchievements.Count == 0) return;
 
-            if(views == default)
+            if(views == default || views.Count != uchievements.Count)
             {
                 CreateViews(uchievements.Count);
             }
@@ -44,7 +44,7 @@ namespace Uchievements
 
             views = new List<UchievementView>(count);
             ScrollView scroll = new ScrollView();
-            scroll.showVertical = true;
+            scroll.verticalScroller.style.display = DisplayStyle.Flex;
             root.Add(scroll);
             root.styleSheets.Add(UchievementsResourcesLoader.StyleSheet);
 

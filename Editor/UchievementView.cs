@@ -27,6 +27,9 @@ namespace Uchievements
             var progressbarLabel = data.GetLabelForProgressbar();
             ProgressBar.title = progressbarLabel;
             ProgressBar.value = data.Progress / maxProgress*100;
+
+            var fill = ProgressBar.Q(classes: new string[]{"unity-progress-bar__background"});
+            fill.style.height = new StyleLength(StyleKeyword.Auto);
         }
 
 
